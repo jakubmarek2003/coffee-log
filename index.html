@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Coffee Logbook</title>
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA+ElEQVR4nOWXrQ6DMBSFb28mWDKDmGkwmImZvRAPAE8ED8ALzUzMYEgtFsdUk9HctqTQn4QjD02/c29bmjIgVOTZQvl7NU4zU72V4QtsCoKh4SoLQ8PVEGgb6FvoUn3f1ofAizxbjB3o25qEVU1H+i7BrEtQNd0mkGtXrAF0E1PBKG9XAF31OpCXJdgKcqkeAIBRp+DzfTtNpur5eFnHRP8PXCjzersfBhiEgJJz7XfvHSg5h0GIeAFsIaLvgXMEMG1E7wGSOAUmnWMPJB1gdRkddQn9y3YhpdWBGELquRRK4zSz6EuAMklosGSiaoSEAyivY6mQz/Mf47NY5FrVusUAAAAASUVORK5CYII=" />
+  <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAFkklEQVR4nO3dL3IbaRCG8ZZrgV1lYmDiMgkJCMmF9gDZE2UPkAuFBISEuEwCTFIVMy9I2SvLI8038/3p7neeH0oZWBPpmVZrpCg7C+D26vzJ+xhQ7+7hced9DC4HQMDb4BH4sBsk4m0bFXfXGyFiTOkZd5dfTMgo0SPss9a/kJhRqkcrzc4QQkaNVtO6yYQmZtRq1VDVWUHI6KFmWq+e0MSMXmraWhU0MaO3tY0tDpqYMcqa1hYFTcwYbWlzxUETM7wsaa8oaGKGt9IGZ4MmZkRR0mLzt74BTyeDZjojmrkmjwZNzIjqVJusHJAyGTTTGdEda/RN0MSMLKZaZeWAlFdBM52RzWGzTGhIIWhIeQmadQNZ7bfLhIYUgoaUMzPWDeT33DATGlL+8j6ATL58/vTy57//+dfxSHAME3qB/Yj340YcZ+zP6xF1LLdX509MaEgh6IUOd2emdCy7bCtHlBdmhyHzIjGGVBM6SsxeeDaYlyboaA/m6BPq+e8f7X6IJkXQPIivcX8clyLoQ1tbN9jXy6ULOsqDOWpKEvMy4YPe8gtBVovlwgedQY8TbSrmrZ3Qa6QKOsLE+vL5U/dnDWJeL1XQ3rz2WWIuFz7oKA/m4VQm5pjCB2329mObh0/7vanelqIUQZtNTyrFB5+JXCdN0GYxHuzex6B4ko6UKmiz8R/fHH0dnI+n1kkXtJnPgx7h2QHzUgY9pUfUXtORk2e9tEGrP+jeV3ayShu02baifkbUp6UOeguIehmCTkD9mail1EH3nlSRvliGqMukDno076gxTyboUROMqGNLGfSIzySf+t1EHVfKoPd5vB3NPhtXum9OMvszIT2i8rpdlEsZ9BLfvn/1PoRZH95/9D4EGamCzhDnKJwE00IFTbDtbDV416AJeJytBO4SNCH7UQ97+GU7Yvalfv8PD1p9QkSnfv+77dA/7u/t96+fHje9SReX1/bu5sb7MLpzCfrH/f3kzwm8nYvL68mfq0c9POhjMZcg+P8dC7aEctSp/ifZNQ9ihpOgJk68liroNYhlW+SDRr39NTH6ukLQWCR63Ok/Dw0/NS/weyFoVIkWNUGjWqSoCRpNRImaoCGFoDHr3c1N0RWNCFOaoFGsJGzvqAkaUggai0V8Q+UZQaM5z7WDoLFK1ClN0JBC0OjCa+0gaKwWce0gaEghaEghaEghaEghaEghaEghaEghaEghaKzm/dnnKQSNLrzeRSRoSCForBJx3TAjaHTg+aElgsZiUaezGUFDDN8+imIlk9n7M9IEjVmlK4Z3zGasHBBD0GgiwnQ2I2g0ECVmM4JGpUgxmxE0KkSL2YyrHFgoYsT7CBqzoke8j5UDUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUoYHnekfXCpSv/9dJrT6nRrVFu733e3V+ZPXjdd+cfbvXz8bHUlsF5fX1b9jCzGbOQX97fvX0TcJM/vw/qP3IXTXJWiCzUkh+CZBE7CmjIFz2Q5SWDnwIuNEPsSLwg1RCHaO62W7Wls5MbYQYiupgwYO8aIQUs7uHh533gcBtHD38LhjQkMKQUMKQUPKmdmf3cP7QIAazw0zoSGFoCHlJWjWDmS13y4TGlIIGlJeBc3agWwOm2VCQ8qboJnSyGKq1ckJTdSI7lijrByQcjRopjSiOtXmyQlN1IhmrklWDkiZDZopjShKWiya0EQNb6UNFq8cRA0vS9pbtEMTNUZb2tziF4VEjVHWtLbqKgdRo7e1ja2+bEfU6KWmrSZR8nViaKHFkGzyxgrTGrVaNdQ8RKY1lmg9DJu/9c20RqkerXSNj2mNKT2H3rBpStzbNuqZ22U9IO5t8Fg/Q+y7BK4hwuun/wBTddz4TICDeQAAAABJRU5ErkJggg==" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Coffee Log" />
+  <meta name="theme-color" content="#1C1108" />
+  <link rel="manifest" href="manifest.json" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F2EBD9;
+      --bg2: #EAE0C8;
+      --paper: #FBF7EE;
+      --paper2: #F5EED8;
+      --ink: #1C1108;
+      --ink2: #5C4A2A;
+      --ink3: #9C8060;
+      --ink4: #C4A97A;
+      --stamp: #7A3B1E;
+      --border: #D4C4A0;
+      --border2: #C0A870;
+      --line: #E0D4B8;
+      --radius: 4px;
+      --shadow: 2px 3px 12px rgba(28,17,8,0.10);
+    }
+    body {
+      font-family: 'Lora', serif;
+      background: var(--bg);
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 27px, var(--line) 27px, var(--line) 28px);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+    .app { max-width: 620px; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+
+    .header { text-align: center; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--ink2); }
+    .header::after { content: ''; display: block; width: 60%; height: 1px; background: var(--border2); margin: 6px auto 0; }
+    .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--ink3); text-transform: uppercase; margin-bottom: 6px; }
+    .header h1 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; line-height: 1.1; }
+    .header-sub { font-family: 'Lora', serif; font-style: italic; font-size: 14px; color: var(--ink3); margin-top: 4px; }
+    .header-date { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink4); margin-top: 10px; letter-spacing: 0.06em; }
+    .count-stamp { display: inline-block; margin-top: 10px; border: 2px solid var(--stamp); color: var(--stamp); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 12px; border-radius: 2px; transform: rotate(-1.5deg); }
+
+    .tabs { display: flex; gap: 0; margin-bottom: 2rem; border-bottom: 2px solid var(--border2); }
+    .tab { padding: 10px 16px; font-size: 12px; font-family: 'DM Mono', monospace; letter-spacing: 0.05em; cursor: pointer; color: var(--ink3); border: none; background: none; border-bottom: 3px solid transparent; margin-bottom: -2px; text-transform: uppercase; transition: all 0.15s; }
+    .tab:hover { color: var(--ink2); }
+    .tab.active { color: var(--ink); border-bottom-color: var(--ink); }
+
+    .section-label { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; color: var(--ink3); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .form-block { margin-bottom: 1.75rem; }
+
+    .methods { display: flex; flex-wrap: wrap; gap: 7px; }
+    .method-btn { padding: 7px 16px; font-size: 13px; font-family: 'Lora', serif; border: 1.5px solid var(--border2); border-radius: 2px; cursor: pointer; background: var(--paper); color: var(--ink2); transition: all 0.12s; box-shadow: 1px 1px 0 var(--border); }
+    .method-btn:hover { background: var(--paper2); color: var(--ink); }
+    .method-btn.sel { background: var(--ink); color: var(--paper); border-color: var(--ink); box-shadow: none; }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-group.full { grid-column: 1 / -1; }
+    label { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; color: var(--ink3); text-transform: uppercase; letter-spacing: 0.1em; }
+
+    input[type=text], input[type=number], select, textarea {
+      font-family: 'Lora', serif; font-size: 14px; color: var(--ink); background: var(--paper);
+      border: none; border-bottom: 1.5px solid var(--border2); border-radius: 0;
+      padding: 8px 4px; width: 100%; outline: none; transition: border-color 0.12s; appearance: none;
+    }
+    input:focus, select:focus, textarea:focus { border-bottom-color: var(--ink); background: var(--paper2); }
+    textarea { resize: vertical; min-height: 80px; line-height: 1.6; border: 1.5px solid var(--border2); padding: 10px; border-radius: var(--radius); }
+    textarea:focus { border-color: var(--ink); }
+
+    .grinder-select-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+    .grinder-card { background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 1rem; box-shadow: var(--shadow); }
+    .grinder-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--line); gap: 10px; }
+    .grinder-row:last-child { border-bottom: none; }
+    .grinder-name { font-family: 'Lora', serif; font-size: 14px; color: var(--ink); flex: 1; }
+    .grinder-type { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink4); background: var(--bg2); padding: 2px 8px; border-radius: 20px; }
+    .grinder-del { background: none; border: none; cursor: pointer; color: var(--ink4); font-size: 16px; padding: 0 4px; line-height: 1; transition: color 0.1s; }
+    .grinder-del:hover { color: #8B2020; }
+    .add-grinder-row { display: flex; gap: 8px; margin-top: 10px; align-items: flex-end; }
+
+    .btn-small { padding: 7px 14px; font-size: 12px; font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.06em; cursor: pointer; background: var(--ink2); color: var(--paper); border: none; border-radius: var(--radius); white-space: nowrap; transition: opacity 0.15s; }
+    .btn-small:hover { opacity: 0.85; }
+
+    .ratio-pill { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Mono', monospace; font-size: 14px; font-weight: 500; color: var(--stamp); background: var(--paper2); border: 1.5px solid var(--border2); border-radius: 2px; padding: 5px 14px; margin-top: 6px; }
+
+    .flavor-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .flavor-tag { padding: 5px 13px; font-size: 13px; font-family: 'Lora', serif; border: 1.5px solid var(--border2); border-radius: 2px; cursor: pointer; background: var(--paper); color: var(--ink2); transition: all 0.12s; box-shadow: 1px 1px 0 var(--border); }
+    .flavor-tag:hover { background: var(--paper2); }
+    .flavor-tag.sel { background: var(--ink2); color: var(--paper); border-color: var(--ink2); box-shadow: none; }
+    .custom-flavor-row { display: flex; gap: 8px; margin-top: 8px; align-items: center; }
+    .custom-flavor-row input { flex: 1; font-size: 13px; }
+
+    .stars-row { display: flex; gap: 6px; }
+    .star { font-size: 28px; cursor: pointer; color: var(--border2); line-height: 1; user-select: none; transition: color 0.1s, transform 0.1s; }
+    .star:hover, .star.on { color: var(--stamp); }
+    .star:active { transform: scale(0.88); }
+
+    .save-btn { width: 100%; padding: 13px; font-size: 15px; font-family: 'Playfair Display', serif; font-weight: 600; letter-spacing: 0.03em; cursor: pointer; background: var(--ink); color: var(--paper); border: none; border-radius: var(--radius); margin-top: 1.75rem; transition: opacity 0.15s, transform 0.1s; box-shadow: var(--shadow); }
+    .save-btn:hover { opacity: 0.88; }
+    .save-btn:active { transform: scale(0.99); }
+
+    .log-list { display: flex; flex-direction: column; gap: 14px; }
+    .log-card { background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem 1.1rem 1.5rem; box-shadow: var(--shadow); position: relative; }
+    .log-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--ink2); border-radius: var(--radius) 0 0 var(--radius); }
+    .log-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .log-card-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; color: var(--ink); }
+    .log-card-sub { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink4); margin-top: 3px; letter-spacing: 0.04em; }
+    .log-stars { font-size: 14px; color: var(--stamp); white-space: nowrap; }
+    .chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+    .chip { font-size: 11px; font-family: 'DM Mono', monospace; color: var(--ink2); background: var(--bg2); border: 1px solid var(--border); padding: 3px 9px; border-radius: 2px; }
+    .chip.flavor { background: var(--paper2); color: var(--ink3); font-style: italic; font-family: 'Lora', serif; font-size: 12px; }
+    .log-notes { font-size: 13px; font-style: italic; color: var(--ink2); margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border2); line-height: 1.6; }
+    .empty { text-align: center; padding: 3.5rem 0; color: var(--ink3); font-size: 14px; font-style: italic; line-height: 1.8; }
+
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 2rem; }
+    .stat-card { background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 1rem; text-align: center; box-shadow: var(--shadow); }
+    .stat-label { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--ink3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+    .stat-val { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--ink); }
+    .stat-sub { font-size: 11px; font-style: italic; color: var(--ink4); margin-top: 3px; }
+    .bar-row { margin-bottom: 14px; }
+    .bar-label { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 5px; color: var(--ink); font-family: 'Lora', serif; }
+    .bar-label span:last-child { font-family: 'DM Mono', monospace; color: var(--ink3); font-size: 11px; }
+    .bar-track { height: 6px; background: var(--bg2); border-radius: 2px; overflow: hidden; }
+    .bar-fill { height: 6px; background: var(--ink2); border-radius: 2px; }
+
+    .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--ink); color: var(--paper); font-family: 'DM Mono', monospace; font-size: 13px; padding: 10px 20px; border-radius: 2px; opacity: 0; transition: all 0.3s; pointer-events: none; white-space: nowrap; z-index: 100; }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    @media (display-mode: standalone) {
+      body { padding-top: env(safe-area-inset-top); }
+      .app { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
+    }
+    @media (max-width: 480px) {
+      .header h1 { font-size: 24px; }
+      .tab { padding: 10px 9px; font-size: 11px; letter-spacing: 0.03em; }
+      .grinder-select-row { grid-template-columns: 1fr 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .add-grinder-row { flex-wrap: wrap; }
+      .add-grinder-row .btn-small { width: 100%; margin-top: 4px; }
+      .form-grid { grid-template-columns: 1fr 1fr; }
+      .method-btn { padding: 8px 12px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <div class="header-eyebrow">Personal brew journal</div>
+    <h1>Coffee Logbook</h1>
+    <div class="header-sub">zápisník přípravy kávy</div>
+    <div class="header-date" id="date-display"></div>
+    <div class="count-stamp" id="count-badge">0 příprav</div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('new')">Nový záznam</button>
+    <button class="tab" onclick="showTab('log')">Historie</button>
+    <button class="tab" onclick="showTab('grinders')">Mlýnky</button>
+    <button class="tab" onclick="showTab('stats')">Statistiky</button>
+  </div>
+
+  <!-- NOVÝ ZÁZNAM -->
+  <div id="tab-new">
+    <div class="form-block">
+      <div class="section-label">Metoda přípravy</div>
+      <div class="methods" id="methods">
+        <button class="method-btn sel" onclick="selMethod(this,'Espresso')">Espresso</button>
+        <button class="method-btn" onclick="selMethod(this,'Moka pot')">Moka pot</button>
+        <button class="method-btn" onclick="selMethod(this,'Pour over')">Pour over</button>
+        <button class="method-btn" onclick="selMethod(this,'French press')">French press</button>
+        <button class="method-btn" onclick="selMethod(this,'AeroPress')">AeroPress</button>
+        <button class="method-btn" onclick="selMethod(this,'Cold brew')">Cold brew</button>
+        <button class="method-btn" onclick="selMethod(this,'Chemex')">Chemex</button>
+        <button class="method-btn" onclick="selMethod(this,'Syphon')">Syphon</button>
+      </div>
+    </div>
+
+    <div class="form-block">
+      <div class="section-label">Původ / blend</div>
+      <input type="text" id="f-origin" placeholder="napr. Etiopie Yirgacheffe, Guatemala SHB..." />
+    </div>
+
+    <div class="form-block">
+      <div class="section-label">Mlýnek &amp; nastavení</div>
+      <div class="grinder-select-row">
+        <div class="form-group">
+          <label>Mlýnek</label>
+          <select id="f-grinder-sel" onchange="updateGrinderSettingType()">
+            <option value="">– bez mlýnku –</option>
+          </select>
+        </div>
+        <div class="form-group" id="grinder-num-group" style="display:none;">
+          <label id="grinder-num-label">Číslo</label>
+          <input type="number" id="f-grinder-setting" placeholder="napr. 12" min="0" max="999" step="0.5" />
+        </div>
+        <div class="form-group" id="grinder-clicks-group" style="display:none;">
+          <label>Kliknutí</label>
+          <input type="number" id="f-grinder-clicks" placeholder="napr. 8" min="0" max="999" step="1" />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-block">
+      <div class="section-label">Parametry</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Dávka kávy (g)</label>
+          <input type="number" id="f-dose" placeholder="18" min="5" max="50" step="0.5" oninput="updateRatio()" />
+        </div>
+        <div class="form-group">
+          <label>Výtěžek / voda (g)</label>
+          <input type="number" id="f-yield" placeholder="36" min="10" max="500" step="0.5" oninput="updateRatio()" />
+        </div>
+        <div class="form-group">
+          <label>Čas extrakce (s)</label>
+          <input type="number" id="f-time" placeholder="28" min="10" max="300" />
+        </div>
+        <div class="form-group">
+          <label>Teplota vody (°C)</label>
+          <input type="number" id="f-temp" placeholder="93" min="60" max="100" />
+        </div>
+      </div>
+      <div id="ratio-row" style="display:none; margin-top: 10px;">
+        <div class="ratio-pill" id="ratio-val"></div>
+      </div>
+    </div>
+
+    <div class="form-block">
+      <div class="section-label">Chuťový profil</div>
+      <div class="flavor-tags" id="flavor-tags">
+        <button class="flavor-tag" onclick="togFlavor(this)">Čokoláda</button>
+        <button class="flavor-tag" onclick="togFlavor(this)">Oříšky</button>
+        <button class="flavor-tag" onclick="togFlavor(this)">Ovoce</button>
+        <button class="flavor-tag" onclick="togFlavor(this)">Karamel</button>
+        <button class="flavor-tag" onclick="togFlavor(this)">Citrusy</button>
+        <button class="flavor-tag" onclick="togFlavor(this)">Květiny</button>
+        <button class="flavor-tag" onclick="togFlavor(this)">Zemitost</button>
+        <button class="flavor-tag" onclick="togFlavor(this)">Koření</button>
+        <button class="flavor-tag" onclick="togFlavor(this)">Kouř</button>
+        <button class="flavor-tag" onclick="togFlavor(this)">Víno</button>
+        <button class="flavor-tag" onclick="togFlavor(this)">Med</button>
+        <button class="flavor-tag" onclick="togFlavor(this)">Máslo</button>
+      </div>
+      <div class="custom-flavor-row">
+        <input type="text" id="custom-flavor-input" placeholder="Vlastní chuť..." onkeydown="if(event.key==='Enter')addCustomFlavor()" />
+        <button class="btn-small" onclick="addCustomFlavor()">+ Přidat</button>
+      </div>
+    </div>
+
+    <div class="form-block">
+      <div class="section-label">Hodnocení</div>
+      <div class="stars-row" id="stars">
+        <span class="star" onclick="setStar(1)">&#9733;</span>
+        <span class="star" onclick="setStar(2)">&#9733;</span>
+        <span class="star" onclick="setStar(3)">&#9733;</span>
+        <span class="star" onclick="setStar(4)">&#9733;</span>
+        <span class="star" onclick="setStar(5)">&#9733;</span>
+      </div>
+    </div>
+
+    <div class="form-block">
+      <div class="section-label">Poznámky</div>
+      <textarea id="f-notes" placeholder="Jak šla extrakce? Co bys příště změnil? Zvláštní poznámky..."></textarea>
+    </div>
+
+    <button class="save-btn" onclick="saveEntry()">Zapsat do deníku</button>
+  </div>
+
+  <!-- HISTORIE -->
+  <div id="tab-log" style="display:none;">
+    <div id="log-list" class="log-list"></div>
+  </div>
+
+  <!-- MLÝNKY -->
+  <div id="tab-grinders" style="display:none;">
+    <div class="form-block">
+      <div class="section-label">Moje mlýnky</div>
+      <div class="grinder-card">
+        <div id="grinders-list"></div>
+        <div class="add-grinder-row">
+          <div class="form-group" style="flex:2;">
+            <label>Název mlýnku</label>
+            <input type="text" id="new-grinder-name" placeholder="napr. Comandante C40" onkeydown="if(event.key==='Enter')addGrinder()" />
+          </div>
+          <div class="form-group" style="flex:1;">
+            <label>Typ nastavení</label>
+            <select id="new-grinder-type">
+              <option value="number">Číslo</option>
+              <option value="clicks">Kliknutí</option>
+              <option value="both">Obojí</option>
+            </select>
+          </div>
+          <button class="btn-small" onclick="addGrinder()" style="margin-bottom:1px;">Přidat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATISTIKY -->
+  <div id="tab-stats" style="display:none;">
+    <div class="stats-grid" id="stats-grid"></div>
+    <div class="section-label" style="margin-bottom:12px;">Metody přípravy</div>
+    <div id="stats-methods"></div>
+    <div class="section-label" style="margin-top:1.75rem;margin-bottom:12px;">Původy &amp; blendy</div>
+    <div id="stats-origins"></div>
+    <div class="section-label" style="margin-top:1.75rem;margin-bottom:12px;">Nejčastější chutě</div>
+    <div id="stats-flavors"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  const BASE_FLAVORS = ['Čokoláda','Oříšky','Ovoce','Karamel','Citrusy','Květiny','Zemitost','Koření','Kouř','Víno','Med','Máslo'];
+  let entries = JSON.parse(localStorage.getItem('coffee_log_v3') || '[]');
+  let grinders = JSON.parse(localStorage.getItem('coffee_grinders_v1') || '[]');
+  let currentMethod = 'Espresso';
+  let currentRating = 0;
+  let selectedFlavors = [];
+
+  function save() { localStorage.setItem('coffee_log_v3', JSON.stringify(entries)); localStorage.setItem('coffee_grinders_v1', JSON.stringify(grinders)); updateBadge(); }
+  function showToast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2200); }
+  function updateBadge() { const n = entries.length; document.getElementById('count-badge').textContent = n + (n === 1 ? ' příprava' : n >= 2 && n <= 4 ? ' přípravy' : ' příprav'); }
+
+  const days = ['neděle','pondělí','úterý','středa','čtvrtek','pátek','sobota'];
+  const months = ['ledna','února','března','dubna','května','června','července','srpna','září','října','listopadu','prosince'];
+  const now = new Date();
+  document.getElementById('date-display').textContent = days[now.getDay()] + ', ' + now.getDate() + '. ' + months[now.getMonth()] + ' ' + now.getFullYear();
+  updateBadge();
+
+  function showTab(t) {
+    ['new','log','grinders','stats'].forEach(id => { document.getElementById('tab-'+id).style.display = id===t ? '' : 'none'; });
+    document.querySelectorAll('.tab').forEach((el,i) => { el.classList.toggle('active', ['new','log','grinders','stats'][i]===t); });
+    if (t==='log') renderLog();
+    if (t==='grinders') renderGrinders();
+    if (t==='stats') renderStats();
+    if (t==='new') refreshGrinderSelect();
+  }
+
+  function selMethod(btn, name) { document.querySelectorAll('.method-btn').forEach(b => b.classList.remove('sel')); btn.classList.add('sel'); currentMethod = name; }
+  function setStar(n) { currentRating = n; document.querySelectorAll('.star').forEach((s,i) => s.classList.toggle('on', i<n)); }
+  function togFlavor(btn) { btn.classList.toggle('sel'); const f = btn.textContent; if (selectedFlavors.includes(f)) selectedFlavors = selectedFlavors.filter(x=>x!==f); else selectedFlavors.push(f); }
+
+  function addCustomFlavor() {
+    const inp = document.getElementById('custom-flavor-input');
+    const val = inp.value.trim(); if (!val) return;
+    const btn = document.createElement('button'); btn.className = 'flavor-tag sel'; btn.textContent = val; btn.onclick = function() { togFlavor(this); };
+    document.getElementById('flavor-tags').appendChild(btn);
+    selectedFlavors.push(val); inp.value = '';
+  }
+
+  function updateRatio() {
+    const d = parseFloat(document.getElementById('f-dose').value);
+    const y = parseFloat(document.getElementById('f-yield').value);
+    const row = document.getElementById('ratio-row');
+    if (d && y) { row.style.display=''; document.getElementById('ratio-val').textContent = 'Brew ratio  1 : ' + (y/d).toFixed(1); }
+    else { row.style.display='none'; }
+  }
+
+  function refreshGrinderSelect() {
+    const sel = document.getElementById('f-grinder-sel');
+    const prev = sel.value;
+    sel.innerHTML = '<option value="">– bez mlýnku –</option>';
+    grinders.forEach((g,i) => { const o = document.createElement('option'); o.value=i; o.textContent=g.name; sel.appendChild(o); });
+    sel.value = prev || '';
+    updateGrinderSettingType();
+  }
+
+  function updateGrinderSettingType() {
+    const idx = document.getElementById('f-grinder-sel').value;
+    const ng = document.getElementById('grinder-num-group');
+    const cg = document.getElementById('grinder-clicks-group');
+    if (idx==='' || !grinders[idx]) { ng.style.display='none'; cg.style.display='none'; return; }
+    const type = grinders[idx].type;
+    ng.style.display = (type==='number'||type==='both') ? '' : 'none';
+    cg.style.display = (type==='clicks'||type==='both') ? '' : 'none';
+  }
+
+  function addGrinder() {
+    const name = document.getElementById('new-grinder-name').value.trim();
+    const type = document.getElementById('new-grinder-type').value;
+    if (!name) return;
+    grinders.push({name, type}); save();
+    document.getElementById('new-grinder-name').value = '';
+    renderGrinders(); refreshGrinderSelect(); showToast('Mlýnek přidán');
+  }
+
+  function deleteGrinder(i) { if (!confirm('Smazat mlýnek "'+grinders[i].name+'"?')) return; grinders.splice(i,1); save(); renderGrinders(); refreshGrinderSelect(); }
+
+  function renderGrinders() {
+    const el = document.getElementById('grinders-list');
+    if (!grinders.length) { el.innerHTML = '<div style="font-size:13px;font-style:italic;color:var(--ink3);padding:8px 0 12px;">Zatím žádné mlýnky. Přidej svůj první níže.</div>'; return; }
+    const typeLabel = {number:'Číslo', clicks:'Kliknutí', both:'Číslo + kliky'};
+    el.innerHTML = grinders.map((g,i) =>
+      '<div class="grinder-row"><span class="grinder-name">'+g.name+'</span><span class="grinder-type">'+typeLabel[g.type]+'</span><button class="grinder-del" onclick="deleteGrinder('+i+')" title="Smazat">&#10005;</button></div>'
+    ).join('');
+  }
+
+  function saveEntry() {
+    const origin = document.getElementById('f-origin').value.trim();
+    const dose = document.getElementById('f-dose').value;
+    const yld = document.getElementById('f-yield').value;
+    const time = document.getElementById('f-time').value;
+    const temp = document.getElementById('f-temp').value;
+    const notes = document.getElementById('f-notes').value.trim();
+    const gIdx = document.getElementById('f-grinder-sel').value;
+    const entry = {
+      id: Date.now(), date: new Date().toISOString(),
+      method: currentMethod, origin: origin||'Neznámý původ',
+      dose, yield: yld, time, temp,
+      ratio: (dose&&yld) ? (parseFloat(yld)/parseFloat(dose)).toFixed(1) : null,
+      grinder: gIdx!==''&&grinders[gIdx] ? grinders[gIdx].name : '',
+      grinderSetting: document.getElementById('f-grinder-setting').value,
+      grinderClicks: document.getElementById('f-grinder-clicks').value,
+      rating: currentRating, flavors: [...selectedFlavors], notes
+    };
+    entries.unshift(entry); save();
+    ['f-origin','f-dose','f-yield','f-time','f-temp','f-grinder-setting','f-grinder-clicks','f-notes'].forEach(id => document.getElementById(id).value='');
+    document.getElementById('f-grinder-sel').value=''; updateGrinderSettingType();
+    document.getElementById('ratio-row').style.display='none';
+    setStar(0); selectedFlavors=[];
+    document.querySelectorAll('.flavor-tag').forEach(b => { if (!BASE_FLAVORS.includes(b.textContent)) b.remove(); else b.classList.remove('sel'); });
+    showToast('Záznam uložen'); showTab('log');
+  }
+
+  function starsStr(n) { let s=''; for(let i=0;i<5;i++) s+=i<n?'★':'☆'; return s; }
+  function fmtDate(iso) { const d=new Date(iso); return d.getDate()+'. '+(d.getMonth()+1)+'. '+d.getFullYear(); }
+
+  function renderLog() {
+    const el = document.getElementById('log-list');
+    if (!entries.length) { el.innerHTML='<div class="empty">Zatím žádné záznamy.<br><em>Připrav si kávu a zapiš ji.</em></div>'; return; }
+    el.innerHTML = entries.map(e => {
+      const pc = [e.dose?e.dose+' g':null, e['yield']?e['yield']+' g výtěžek':null, e.time?e.time+' s':null, e.temp?e.temp+' °C':null, e.ratio?'1:'+e.ratio:null].filter(Boolean).map(c=>'<span class="chip">'+c+'</span>').join('');
+      const gc = [e.grinder||null, e.grinderSetting?'#'+e.grinderSetting:null, e.grinderClicks?e.grinderClicks+' kliků':null].filter(Boolean).map(c=>'<span class="chip">'+c+'</span>').join('');
+      const fc = (e.flavors&&e.flavors.length) ? e.flavors.map(f=>'<span class="chip flavor">'+f+'</span>').join('') : '';
+      const notes = e.notes ? '<div class="log-notes">'+e.notes+'</div>' : '';
+      return '<div class="log-card"><div class="log-card-top"><div><div class="log-card-title">'+e.origin+'</div><div class="log-card-sub">'+e.method+' &middot; '+fmtDate(e.date)+'</div></div>'+(e.rating?'<div class="log-stars">'+starsStr(e.rating)+'</div>':'')+'</div>'+((pc||gc||fc)?'<div class="chips">'+pc+gc+fc+'</div>':'')+notes+'</div>';
+    }).join('');
+  }
+
+  function renderStats() {
+    if (!entries.length) { document.getElementById('stats-grid').innerHTML='<div class="empty" style="grid-column:1/-1;">Zatím žádná data.</div>'; ['stats-methods','stats-origins','stats-flavors'].forEach(id=>document.getElementById(id).innerHTML=''); return; }
+    const rated = entries.filter(e=>e.rating>0);
+    const avg = rated.length ? (rated.reduce((s,e)=>s+e.rating,0)/rated.length).toFixed(1) : '–';
+    const mc = {}; entries.forEach(e=>{mc[e.method]=(mc[e.method]||0)+1;});
+    const top = Object.entries(mc).sort((a,b)=>b[1]-a[1])[0];
+    document.getElementById('stats-grid').innerHTML =
+      '<div class="stat-card"><div class="stat-label">Příprav</div><div class="stat-val">'+entries.length+'</div></div>'+
+      '<div class="stat-card"><div class="stat-label">Hodnocení</div><div class="stat-val">'+avg+'</div><div class="stat-sub">'+rated.length+' záznamů</div></div>'+
+      '<div class="stat-card"><div class="stat-label">Top metoda</div><div class="stat-val" style="font-size:15px;padding-top:6px;">'+(top?top[0]:'–')+'</div><div class="stat-sub">'+(top?top[1]+'x':'')+'</div></div>';
+    function bars(obj, id) {
+      const s=Object.entries(obj).sort((a,b)=>b[1]-a[1]).slice(0,6); const max=s[0]?s[0][1]:1;
+      document.getElementById(id).innerHTML = s.map(([k,v])=>'<div class="bar-row"><div class="bar-label"><span>'+k+'</span><span>'+v+'x</span></div><div class="bar-track"><div class="bar-fill" style="width:'+Math.round(v/max*100)+'%"></div></div></div>').join('')||'<div style="color:var(--ink3);font-size:13px;font-style:italic;">Žádná data</div>';
+    }
+    bars(mc,'stats-methods');
+    const oc={}; entries.forEach(e=>{if(e.origin!=='Neznámý původ')oc[e.origin]=(oc[e.origin]||0)+1;}); bars(oc,'stats-origins');
+    const fc={}; entries.forEach(e=>{(e.flavors||[]).forEach(f=>{fc[f]=(fc[f]||0)+1;});}); bars(fc,'stats-flavors');
+  }
+
+  refreshGrinderSelect();
+</script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(()=>{});
+    }
+  </script>
+</body>
+</html>
