@@ -5,50 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Coffee Logbook</title>
   <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA+ElEQVR4nOWXrQ6DMBSFb28mWDKDmGkwmImZvRAPAE8ED8ALzUzMYEgtFsdUk9HctqTQn4QjD02/c29bmjIgVOTZQvl7NU4zU72V4QtsCoKh4SoLQ8PVEGgb6FvoUn3f1ofAizxbjB3o25qEVU1H+i7BrEtQNd0mkGtXrAF0E1PBKG9XAF31OpCXJdgKcqkeAIBRp+DzfTtNpur5eFnHRP8PXCjzersfBhiEgJJz7XfvHSg5h0GIeAFsIaLvgXMEMG1E7wGSOAUmnWMPJB1gdRkddQn9y3YhpdWBGELquRRK4zSz6EuAMklosGSiaoSEAyivY6mQz/Mf47NY5FrVusUAAAAASUVORK5CYII=" />
-  <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAFkklEQVR4nO3dL3IbaRCG8ZZrgV1lYmDiMgkJCMmF9gDZE2UPkAuFBISEuEwCTFIVMy9I2SvLI8038/3p7neeH0oZWBPpmVZrpCg7C+D26vzJ+xhQ7+7hced9DC4HQMDb4BH4sBsk4m0bFXfXGyFiTOkZd5dfTMgo0SPss9a/kJhRqkcrzc4QQkaNVtO6yYQmZtRq1VDVWUHI6KFmWq+e0MSMXmraWhU0MaO3tY0tDpqYMcqa1hYFTcwYbWlzxUETM7wsaa8oaGKGt9IGZ4MmZkRR0mLzt74BTyeDZjojmrkmjwZNzIjqVJusHJAyGTTTGdEda/RN0MSMLKZaZeWAlFdBM52RzWGzTGhIIWhIeQmadQNZ7bfLhIYUgoaUMzPWDeT33DATGlL+8j6ATL58/vTy57//+dfxSHAME3qB/Yj340YcZ+zP6xF1LLdX509MaEgh6IUOd2emdCy7bCtHlBdmhyHzIjGGVBM6SsxeeDaYlyboaA/m6BPq+e8f7X6IJkXQPIivcX8clyLoQ1tbN9jXy6ULOsqDOWpKEvMy4YPe8gtBVovlwgedQY8TbSrmrZ3Qa6QKOsLE+vL5U/dnDWJeL1XQ3rz2WWIuFz7oKA/m4VQm5pjCB2329mObh0/7vanelqIUQZtNTyrFB5+JXCdN0GYxHuzex6B4ko6UKmiz8R/fHH0dnI+n1kkXtJnPgx7h2QHzUgY9pUfUXtORk2e9tEGrP+jeV3ayShu02baifkbUp6UOeguIehmCTkD9mail1EH3nlSRvliGqMukDno076gxTyboUROMqGNLGfSIzySf+t1EHVfKoPd5vB3NPhtXum9OMvszIT2i8rpdlEsZ9BLfvn/1PoRZH95/9D4EGamCzhDnKJwE00IFTbDtbDV416AJeJytBO4SNCH7UQ97+GU7Yvalfv8PD1p9QkSnfv+77dA/7u/t96+fHje9SReX1/bu5sb7MLpzCfrH/f3kzwm8nYvL68mfq0c9POhjMZcg+P8dC7aEctSp/ifZNQ9ihpOgJk68liroNYhlW+SDRr39NTH6ukLQWCR63Ok/Dw0/NS/weyFoVIkWNUGjWqSoCRpNRImaoCGFoDHr3c1N0RWNCFOaoFGsJGzvqAkaUggai0V8Q+UZQaM5z7WDoLFK1ClN0JBC0OjCa+0gaKwWce0gaEghaEghaEghaEghaEghaEghaEghaEghaKzm/dnnKQSNLrzeRSRoSCForBJx3TAjaHTg+aElgsZiUaezGUFDDN8+imIlk9n7M9IEjVmlK4Z3zGasHBBD0GgiwnQ2I2g0ECVmM4JGpUgxmxE0KkSL2YyrHFgoYsT7CBqzoke8j5UDUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUggaUoYHnekfXCpSv/9dJrT6nRrVFu733e3V+ZPXjdd+cfbvXz8bHUlsF5fX1b9jCzGbOQX97fvX0TcJM/vw/qP3IXTXJWiCzUkh+CZBE7CmjIFz2Q5SWDnwIuNEPsSLwg1RCHaO62W7Wls5MbYQYiupgwYO8aIQUs7uHh533gcBtHD38LhjQkMKQUMKQUPKmdmf3cP7QIAazw0zoSGFoCHlJWjWDmS13y4TGlIIGlJeBc3agWwOm2VCQ8qboJnSyGKq1ckJTdSI7lijrByQcjRopjSiOtXmyQlN1IhmrklWDkiZDZopjShKWiya0EQNb6UNFq8cRA0vS9pbtEMTNUZb2tziF4VEjVHWtLbqKgdRo7e1ja2+bEfU6KWmrSZR8nViaKHFkGzyxgrTGrVaNdQ8RKY1lmg9DJu/9c20RqkerXSNj2mNKT2H3rBpStzbNuqZ22U9IO5t8Fg/Q+y7BK4hwuun/wBTddz4TICDeQAAAABJRU5ErkJggg==" />
+  <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAFkklEQVR4nO3dL3IbaRCG8ZZrgV1lYmDiMgkJCMmF9gDZE2UPkAuFBISEuEwCTFIVMy9I2SvLI8038/3p7neeH0oZWBPpmVZrpCg7C+D26vzJ+xhQ7+7hced9DC4HQMDb4BH4sBsk4m0bFXfXGyFiTOkZd5dfTMgo0SPss9a/kJhRqkcrzc4QQkaNVtO6yYQmZtRq1VDVWUHI6KFmWq+e0MSMXmraWhU0MaO3tY0tDpqYMcqa1hYFTcwYbWlzxUETM7wsaa8oaGKGt9IGZ4MmZkRR0mLzt74BTyeDZjojmrkmjwZNzIjqVJusHJAyGTTTGdEda/RN0MSMLKZaZeWAlFdBM52RzWGzTGhIIWhIeQmadQNZ7bfLhIYUgoaUMzPWDeT33DATGlL+8j6ATL58/vTy57//+dfxSHAME3qB/Yj340YcZ+zP6xF1LLdX509MaEgh6IUOd2emdCy7bCtHlBdmhyHzIjGGVBM6SsxeeDaYlyboaA/m6BPq+e8f7X6IJkXQPIivcX8clyLoQ1tbN9jXy6ULOsqDOWpKEvMy4YPe8gtBVovlwgedQY8TbSrmrZ3Qa6QKOsLE+vL5U/dnDWJeL1XQ3rz2WWIuFz7oKA/m4VQm5pjCB2329mObh0/7vanelqIUQZtNTyrFB5+JXCdN0GYxHuzex6B4ko6UKmiz8R/fHH0dnI+n1kkXtJnPgx7h2QHzUgY9pUfUXtORk2e9tEGrP+jeV3ayShu02baifkbUp6UOeguIehmCTkD9mail1EH3nlSRvliGqMukDno076gxTyboUROMqGNLGfSIzySf+t1EHVfKoPd5vB3NPhtXum9OMvszIT2i8rpdlEsZ9BLfvn/1PoRZH95/9D4EGamCzhDnKJwE00IFTbDtbDV416AJeJytBO4SNCH7UQ97+GU7Yvalfv8PD1p9QkSnfv+77dA/7u/t96+fHje9SReX1/bu5sb7MLpzCfrH/f3kzwm8nYvL68mfq0c9POhjMZcg+P8dC7aEctSp/ifZNQ9ihpOgJk68liroNYhlW+SDRr39NTH6ukLQWCR63Ok/Dw0/NS/weyFoVIkWNUGjWqSoCRpNRImaoCGFoDHr3c1N0RWNCFOaoFGsJGzvqAkaUggai0V8Q+UZQaM5z7WDoLFK1ClN0JBC0OjCa+0gaKwWce0gaEghaEghaEghaEghaEghaEghaEghaEghaEghaEghaEghaEghaEghaEghaEghaEghaEghaEghaEghaEoYHnekfXCpSv/9dJrT6nRrVFu733e3V+ZPXjdd+cfbvXz8bHUlsF5fX1b9jCzGbOQX97fvX0TcJM/vw/qP3IXTXJWiCzUkh+CZBE7CmjIFz2Q5SWDnwIuNEPsSLwg1RCHaO62W7Wls5MbYQYiupgwYO8aIQUs7uHh533gcBtHD38LhjQkMKQUMKQUPKmdmf3cP7QIAazw0zoSGFoCHlJWjWDmS13y4TGlIIGlJeBc3agWwOm2VCQ8qboJnSyGKq1ckJTdSI7lijrByQcjRopjSiOtXmyQlN1IhmrklWDkiZDZopjShKWiya0EQNb6UNFq8cRA0vS9pbtEMTNUZb2tziF4VEjVHWtLbqKgdRo7e1ja2+bEfU6KWmrSZR8nViaKHFkGzyxgrTGrVaNdQ8RKY1lmg9DJu/9c20RqkerXSNj2mNKT2H3rBpStzbNuqZ22U9IO5t8Fg/Q+y7BK4hwuun/wBTddz4TICDeQAAAABJRU5ErkJggg==" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Coffee Log" />
-  <meta name="theme-color" content="#1C1108" />
+  <meta name="theme-color" content="#1C1108" id="theme-meta" />
   <link rel="manifest" href="manifest.json" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --bg: #F2EBD9;
-      --bg2: #EAE0C8;
-      --paper: #FBF7EE;
-      --paper2: #F5EED8;
-      --ink: #1C1108;
-      --ink2: #5C4A2A;
-      --ink3: #9C8060;
-      --ink4: #C4A97A;
-      --stamp: #7A3B1E;
-      --border: #D4C4A0;
-      --border2: #C0A870;
-      --line: #E0D4B8;
-      --radius: 4px;
-      --shadow: 2px 3px 12px rgba(28,17,8,0.10);
+      --bg: #F2EBD9; --bg2: #EAE0C8; --paper: #FBF7EE; --paper2: #F5EED8;
+      --ink: #1C1108; --ink2: #5C4A2A; --ink3: #9C8060; --ink4: #C4A97A;
+      --stamp: #7A3B1E; --border: #D4C4A0; --border2: #C0A870; --line: #E0D4B8;
+      --radius: 4px; --shadow: 2px 3px 12px rgba(28,17,8,0.10); --red: #8B2020;
     }
-    body {
-      font-family: 'Lora', serif;
-      background: var(--bg);
-      background-image: repeating-linear-gradient(0deg, transparent, transparent 27px, var(--line) 27px, var(--line) 28px);
-      color: var(--ink);
-      min-height: 100vh;
+    body.dark {
+      --bg: #1A1208; --bg2: #251A0E; --paper: #2C1F10; --paper2: #362615;
+      --ink: #F0E8D0; --ink2: #C8A870; --ink3: #8C7050; --ink4: #6A5038;
+      --stamp: #D4956A; --border: #3C2E1A; --border2: #5A4028; --line: #2E2010;
+      --shadow: 2px 3px 12px rgba(0,0,0,0.4);
     }
+    body { font-family: 'Lora', serif; background: var(--bg); background-image: repeating-linear-gradient(0deg, transparent, transparent 27px, var(--line) 27px, var(--line) 28px); color: var(--ink); min-height: 100vh; transition: background 0.25s, color 0.25s; }
     .app { max-width: 620px; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
 
-    .header { text-align: center; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--ink2); }
+    .header { text-align: center; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--ink2); position: relative; }
     .header::after { content: ''; display: block; width: 60%; height: 1px; background: var(--border2); margin: 6px auto 0; }
     .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--ink3); text-transform: uppercase; margin-bottom: 6px; }
     .header h1 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; line-height: 1.1; }
     .header-sub { font-family: 'Lora', serif; font-style: italic; font-size: 14px; color: var(--ink3); margin-top: 4px; }
     .header-date { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink4); margin-top: 10px; letter-spacing: 0.06em; }
     .count-stamp { display: inline-block; margin-top: 10px; border: 2px solid var(--stamp); color: var(--stamp); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 12px; border-radius: 2px; transform: rotate(-1.5deg); }
+    .dark-toggle { position: absolute; top: 0; right: 0; background: none; border: 1.5px solid var(--border2); border-radius: var(--radius); padding: 5px 9px; cursor: pointer; font-size: 16px; color: var(--ink3); transition: all 0.15s; line-height: 1; }
+    .dark-toggle:hover { border-color: var(--ink2); color: var(--ink); }
 
-    .tabs { display: flex; gap: 0; margin-bottom: 2rem; border-bottom: 2px solid var(--border2); }
-    .tab { padding: 10px 16px; font-size: 12px; font-family: 'DM Mono', monospace; letter-spacing: 0.05em; cursor: pointer; color: var(--ink3); border: none; background: none; border-bottom: 3px solid transparent; margin-bottom: -2px; text-transform: uppercase; transition: all 0.15s; }
+    .tabs { display: flex; margin-bottom: 2rem; border-bottom: 2px solid var(--border2); overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .tab { padding: 10px 11px; font-size: 11px; font-family: 'DM Mono', monospace; letter-spacing: 0.04em; cursor: pointer; color: var(--ink3); border: none; background: none; border-bottom: 3px solid transparent; margin-bottom: -2px; text-transform: uppercase; transition: color 0.15s; white-space: nowrap; flex-shrink: 0; }
     .tab:hover { color: var(--ink2); }
     .tab.active { color: var(--ink); border-bottom-color: var(--ink); }
 
@@ -57,8 +50,8 @@
     .form-block { margin-bottom: 1.75rem; }
 
     .methods { display: flex; flex-wrap: wrap; gap: 7px; }
-    .method-btn { padding: 7px 16px; font-size: 13px; font-family: 'Lora', serif; border: 1.5px solid var(--border2); border-radius: 2px; cursor: pointer; background: var(--paper); color: var(--ink2); transition: all 0.12s; box-shadow: 1px 1px 0 var(--border); }
-    .method-btn:hover { background: var(--paper2); color: var(--ink); }
+    .method-btn { padding: 7px 14px; font-size: 13px; font-family: 'Lora', serif; border: 1.5px solid var(--border2); border-radius: 2px; cursor: pointer; background: var(--paper); color: var(--ink2); transition: all 0.12s; box-shadow: 1px 1px 0 var(--border); }
+    .method-btn:hover { background: var(--paper2); }
     .method-btn.sel { background: var(--ink); color: var(--paper); border-color: var(--ink); box-shadow: none; }
 
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -69,21 +62,34 @@
     input[type=text], input[type=number], select, textarea {
       font-family: 'Lora', serif; font-size: 14px; color: var(--ink); background: var(--paper);
       border: none; border-bottom: 1.5px solid var(--border2); border-radius: 0;
-      padding: 8px 4px; width: 100%; outline: none; transition: border-color 0.12s; appearance: none;
+      padding: 8px 4px; width: 100%; outline: none; transition: border-color 0.12s, background 0.2s; appearance: none;
     }
     input:focus, select:focus, textarea:focus { border-bottom-color: var(--ink); background: var(--paper2); }
     textarea { resize: vertical; min-height: 80px; line-height: 1.6; border: 1.5px solid var(--border2); padding: 10px; border-radius: var(--radius); }
     textarea:focus { border-color: var(--ink); }
 
-    .grinder-select-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+    /* TIMER */
+    .timer-block { background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); text-align: center; }
+    .timer-display { font-family: 'DM Mono', monospace; font-size: 56px; font-weight: 500; color: var(--ink); letter-spacing: 0.04em; line-height: 1; margin-bottom: 1rem; transition: color 0.2s; }
+    .timer-display.running { color: var(--red); }
+    .timer-display.done { color: var(--stamp); }
+    .timer-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .timer-btn { padding: 10px 22px; font-size: 12px; font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; border: 1.5px solid var(--border2); border-radius: 2px; background: var(--paper); color: var(--ink2); transition: all 0.12s; }
+    .timer-btn.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+    .timer-btn.primary:hover { opacity: 0.85; }
+    .timer-btn.danger { border-color: var(--red); color: var(--red); }
+    .timer-btn.danger:hover { background: var(--red); color: var(--paper); }
+    .timer-use-btn { margin-top: 10px; font-size: 12px; font-family: 'DM Mono', monospace; color: var(--ink3); background: none; border: none; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; display: block; width: 100%; }
+    .timer-use-btn:hover { color: var(--ink2); }
 
+    .grinder-select-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
     .grinder-card { background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 1rem; box-shadow: var(--shadow); }
     .grinder-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--line); gap: 10px; }
     .grinder-row:last-child { border-bottom: none; }
     .grinder-name { font-family: 'Lora', serif; font-size: 14px; color: var(--ink); flex: 1; }
     .grinder-type { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink4); background: var(--bg2); padding: 2px 8px; border-radius: 20px; }
     .grinder-del { background: none; border: none; cursor: pointer; color: var(--ink4); font-size: 16px; padding: 0 4px; line-height: 1; transition: color 0.1s; }
-    .grinder-del:hover { color: #8B2020; }
+    .grinder-del:hover { color: var(--red); }
     .add-grinder-row { display: flex; gap: 8px; margin-top: 10px; align-items: flex-end; }
 
     .btn-small { padding: 7px 14px; font-size: 12px; font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.06em; cursor: pointer; background: var(--ink2); color: var(--paper); border: none; border-radius: var(--radius); white-space: nowrap; transition: opacity 0.15s; }
@@ -96,7 +102,14 @@
     .flavor-tag:hover { background: var(--paper2); }
     .flavor-tag.sel { background: var(--ink2); color: var(--paper); border-color: var(--ink2); box-shadow: none; }
     .custom-flavor-row { display: flex; gap: 8px; margin-top: 8px; align-items: center; }
-    .custom-flavor-row input { flex: 1; font-size: 13px; }
+    .custom-flavor-row input { flex: 1; }
+
+    /* PHOTO */
+    .photo-area { border: 2px dashed var(--border2); border-radius: var(--radius); padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.15s; }
+    .photo-area:hover { border-color: var(--ink2); background: var(--paper2); }
+    .photo-area p { font-size: 13px; font-style: italic; color: var(--ink3); }
+    .photo-preview { width: 100%; max-height: 200px; object-fit: cover; border-radius: var(--radius); display: none; margin-top: 8px; }
+    .photo-clear { font-size: 12px; font-family: 'DM Mono', monospace; color: var(--red); background: none; border: none; cursor: pointer; margin-top: 6px; display: none; text-decoration: underline; }
 
     .stars-row { display: flex; gap: 6px; }
     .star { font-size: 28px; cursor: pointer; color: var(--border2); line-height: 1; user-select: none; transition: color 0.1s, transform 0.1s; }
@@ -118,6 +131,7 @@
     .chip { font-size: 11px; font-family: 'DM Mono', monospace; color: var(--ink2); background: var(--bg2); border: 1px solid var(--border); padding: 3px 9px; border-radius: 2px; }
     .chip.flavor { background: var(--paper2); color: var(--ink3); font-style: italic; font-family: 'Lora', serif; font-size: 12px; }
     .log-notes { font-size: 13px; font-style: italic; color: var(--ink2); margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border2); line-height: 1.6; }
+    .log-photo { width: 100%; max-height: 180px; object-fit: cover; border-radius: var(--radius); margin-top: 10px; cursor: pointer; }
     .empty { text-align: center; padding: 3.5rem 0; color: var(--ink3); font-size: 14px; font-style: italic; line-height: 1.8; }
 
     .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 2rem; }
@@ -131,21 +145,36 @@
     .bar-track { height: 6px; background: var(--bg2); border-radius: 2px; overflow: hidden; }
     .bar-fill { height: 6px; background: var(--ink2); border-radius: 2px; }
 
+    .export-card { background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); margin-bottom: 1.5rem; }
+    .export-desc { font-size: 13px; font-style: italic; color: var(--ink3); margin-bottom: 1rem; line-height: 1.6; }
+    .export-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+    .export-btn { padding: 9px 16px; font-size: 12px; font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.06em; cursor: pointer; border: 1.5px solid var(--border2); border-radius: 2px; background: var(--paper); color: var(--ink2); transition: all 0.12s; }
+    .export-btn:hover { background: var(--paper2); color: var(--ink); }
+    .export-btn.primary { background: var(--ink2); color: var(--paper); border-color: var(--ink2); }
+    .export-btn.danger { border-color: var(--red); color: var(--red); }
+    .export-btn.danger:hover { background: var(--red); color: var(--paper); }
+
+    /* PHOTO LIGHTBOX */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 200; align-items: center; justify-content: center; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 95vw; max-height: 90vh; object-fit: contain; border-radius: var(--radius); }
+    .lightbox-close { position: absolute; top: 1rem; right: 1.25rem; font-size: 28px; color: #fff; cursor: pointer; background: none; border: none; line-height: 1; }
+
     .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--ink); color: var(--paper); font-family: 'DM Mono', monospace; font-size: 13px; padding: 10px 20px; border-radius: 2px; opacity: 0; transition: all 0.3s; pointer-events: none; white-space: nowrap; z-index: 100; }
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
     @media (display-mode: standalone) {
       body { padding-top: env(safe-area-inset-top); }
       .app { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
     }
     @media (max-width: 480px) {
       .header h1 { font-size: 24px; }
-      .tab { padding: 10px 9px; font-size: 11px; letter-spacing: 0.03em; }
+      .tab { padding: 10px 8px; font-size: 10px; }
       .grinder-select-row { grid-template-columns: 1fr 1fr; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
       .add-grinder-row { flex-wrap: wrap; }
       .add-grinder-row .btn-small { width: 100%; margin-top: 4px; }
-      .form-grid { grid-template-columns: 1fr 1fr; }
-      .method-btn { padding: 8px 12px; font-size: 13px; }
+      .timer-display { font-size: 44px; }
     }
   </style>
 </head>
@@ -157,6 +186,7 @@
     <div class="header-sub">zápisník přípravy kávy</div>
     <div class="header-date" id="date-display"></div>
     <div class="count-stamp" id="count-badge">0 příprav</div>
+    <button class="dark-toggle" id="dark-btn" onclick="toggleDark()" title="Tmavý / světlý režim">&#9790;</button>
   </div>
 
   <div class="tabs">
@@ -164,13 +194,14 @@
     <button class="tab" onclick="showTab('log')">Historie</button>
     <button class="tab" onclick="showTab('grinders')">Mlýnky</button>
     <button class="tab" onclick="showTab('stats')">Statistiky</button>
+    <button class="tab" onclick="showTab('backup')">Záloha</button>
   </div>
 
   <!-- NOVÝ ZÁZNAM -->
   <div id="tab-new">
     <div class="form-block">
       <div class="section-label">Metoda přípravy</div>
-      <div class="methods" id="methods">
+      <div class="methods">
         <button class="method-btn sel" onclick="selMethod(this,'Espresso')">Espresso</button>
         <button class="method-btn" onclick="selMethod(this,'Moka pot')">Moka pot</button>
         <button class="method-btn" onclick="selMethod(this,'Pour over')">Pour over</button>
@@ -188,6 +219,18 @@
     </div>
 
     <div class="form-block">
+      <div class="section-label">Timer extrakce</div>
+      <div class="timer-block">
+        <div class="timer-display" id="timer-display">00:00</div>
+        <div class="timer-btns">
+          <button class="timer-btn primary" id="timer-start-btn" onclick="timerStartStop()">Start</button>
+          <button class="timer-btn danger" onclick="timerReset()">Reset</button>
+        </div>
+        <button class="timer-use-btn" id="timer-use-btn" style="display:none;" onclick="useTimerValue()">Použít jako čas extrakce ↓</button>
+      </div>
+    </div>
+
+    <div class="form-block">
       <div class="section-label">Mlýnek &amp; nastavení</div>
       <div class="grinder-select-row">
         <div class="form-group">
@@ -197,7 +240,7 @@
           </select>
         </div>
         <div class="form-group" id="grinder-num-group" style="display:none;">
-          <label id="grinder-num-label">Číslo</label>
+          <label>Číslo</label>
           <input type="number" id="f-grinder-setting" placeholder="napr. 12" min="0" max="999" step="0.5" />
         </div>
         <div class="form-group" id="grinder-clicks-group" style="display:none;">
@@ -210,26 +253,12 @@
     <div class="form-block">
       <div class="section-label">Parametry</div>
       <div class="form-grid">
-        <div class="form-group">
-          <label>Dávka kávy (g)</label>
-          <input type="number" id="f-dose" placeholder="18" min="5" max="50" step="0.5" oninput="updateRatio()" />
-        </div>
-        <div class="form-group">
-          <label>Výtěžek / voda (g)</label>
-          <input type="number" id="f-yield" placeholder="36" min="10" max="500" step="0.5" oninput="updateRatio()" />
-        </div>
-        <div class="form-group">
-          <label>Čas extrakce (s)</label>
-          <input type="number" id="f-time" placeholder="28" min="10" max="300" />
-        </div>
-        <div class="form-group">
-          <label>Teplota vody (°C)</label>
-          <input type="number" id="f-temp" placeholder="93" min="60" max="100" />
-        </div>
+        <div class="form-group"><label>Dávka kávy (g)</label><input type="number" id="f-dose" placeholder="18" min="5" max="50" step="0.5" oninput="updateRatio()" /></div>
+        <div class="form-group"><label>Výtěžek / voda (g)</label><input type="number" id="f-yield" placeholder="36" min="10" max="500" step="0.5" oninput="updateRatio()" /></div>
+        <div class="form-group"><label>Čas extrakce (s)</label><input type="number" id="f-time" placeholder="28" min="10" max="300" /></div>
+        <div class="form-group"><label>Teplota vody (°C)</label><input type="number" id="f-temp" placeholder="93" min="60" max="100" /></div>
       </div>
-      <div id="ratio-row" style="display:none; margin-top: 10px;">
-        <div class="ratio-pill" id="ratio-val"></div>
-      </div>
+      <div id="ratio-row" style="display:none; margin-top:10px;"><div class="ratio-pill" id="ratio-val"></div></div>
     </div>
 
     <div class="form-block">
@@ -255,6 +284,16 @@
     </div>
 
     <div class="form-block">
+      <div class="section-label">Fotka šálku</div>
+      <div class="photo-area" onclick="document.getElementById('photo-input').click()">
+        <p id="photo-placeholder">Klepni pro focení nebo výběr fotky</p>
+        <img id="photo-preview" class="photo-preview" />
+      </div>
+      <input type="file" id="photo-input" accept="image/*" capture="environment" onchange="handlePhoto(this)" style="display:none;" />
+      <button class="photo-clear" id="photo-clear" onclick="clearPhoto()">Odebrat fotku</button>
+    </div>
+
+    <div class="form-block">
       <div class="section-label">Hodnocení</div>
       <div class="stars-row" id="stars">
         <span class="star" onclick="setStar(1)">&#9733;</span>
@@ -267,7 +306,7 @@
 
     <div class="form-block">
       <div class="section-label">Poznámky</div>
-      <textarea id="f-notes" placeholder="Jak šla extrakce? Co bys příště změnil? Zvláštní poznámky..."></textarea>
+      <textarea id="f-notes" placeholder="Jak šla extrakce? Co bys příště změnil?"></textarea>
     </div>
 
     <button class="save-btn" onclick="saveEntry()">Zapsat do deníku</button>
@@ -285,18 +324,8 @@
       <div class="grinder-card">
         <div id="grinders-list"></div>
         <div class="add-grinder-row">
-          <div class="form-group" style="flex:2;">
-            <label>Název mlýnku</label>
-            <input type="text" id="new-grinder-name" placeholder="napr. Comandante C40" onkeydown="if(event.key==='Enter')addGrinder()" />
-          </div>
-          <div class="form-group" style="flex:1;">
-            <label>Typ nastavení</label>
-            <select id="new-grinder-type">
-              <option value="number">Číslo</option>
-              <option value="clicks">Kliknutí</option>
-              <option value="both">Obojí</option>
-            </select>
-          </div>
+          <div class="form-group" style="flex:2;"><label>Název mlýnku</label><input type="text" id="new-grinder-name" placeholder="napr. Comandante C40" onkeydown="if(event.key==='Enter')addGrinder()" /></div>
+          <div class="form-group" style="flex:1;"><label>Typ nastavení</label><select id="new-grinder-type"><option value="number">Číslo</option><option value="clicks">Kliknutí</option><option value="both">Obojí</option></select></div>
           <button class="btn-small" onclick="addGrinder()" style="margin-bottom:1px;">Přidat</button>
         </div>
       </div>
@@ -313,163 +342,162 @@
     <div class="section-label" style="margin-top:1.75rem;margin-bottom:12px;">Nejčastější chutě</div>
     <div id="stats-flavors"></div>
   </div>
+
+  <!-- ZÁLOHA -->
+  <div id="tab-backup" style="display:none;">
+    <div class="form-block">
+      <div class="section-label">Export dat</div>
+      <div class="export-card">
+        <p class="export-desc">Zkopíruje všechny záznamy do schránky jako JSON. Vlož je do Poznámek, Mailu nebo kdekoli chceš mít zálohu.</p>
+        <div class="export-btns">
+          <button class="export-btn primary" onclick="exportToClipboard()">Kopírovat do schránky</button>
+          <button class="export-btn" onclick="exportCSV()">Stáhnout CSV</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-block">
+      <div class="section-label">Import dat</div>
+      <div class="export-card">
+        <p class="export-desc">Vlož sem JSON ze zálohy a záznamy se obnoví. Pozor — přepíše stávající data.</p>
+        <textarea id="import-area" placeholder="Sem vlož JSON zálohu..." style="font-family:'DM Mono',monospace;font-size:12px;min-height:100px;margin-bottom:10px;"></textarea>
+        <div class="export-btns">
+          <button class="export-btn primary" onclick="importFromText()">Obnovit zálohu</button>
+          <button class="export-btn" onclick="document.getElementById('import-area').value=''">Vymazat</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-block">
+      <div class="section-label">Nebezpečná zóna</div>
+      <div class="export-card">
+        <p class="export-desc">Smaže všechna data nevratně. Nejdřív si udělej zálohu!</p>
+        <div class="export-btns"><button class="export-btn danger" onclick="clearAllData()">Smazat vše</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
+  <img id="lightbox-img" src="" />
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-  const BASE_FLAVORS = ['Čokoláda','Oříšky','Ovoce','Karamel','Citrusy','Květiny','Zemitost','Koření','Kouř','Víno','Med','Máslo'];
-  let entries = JSON.parse(localStorage.getItem('coffee_log_v3') || '[]');
-  let grinders = JSON.parse(localStorage.getItem('coffee_grinders_v1') || '[]');
-  let currentMethod = 'Espresso';
-  let currentRating = 0;
-  let selectedFlavors = [];
+  const BASE_FLAVORS=['Čokoláda','Oříšky','Ovoce','Karamel','Citrusy','Květiny','Zemitost','Koření','Kouř','Víno','Med','Máslo'];
+  let entries=JSON.parse(localStorage.getItem('coffee_log_v3')||'[]');
+  let grinders=JSON.parse(localStorage.getItem('coffee_grinders_v1')||'[]');
+  let currentMethod='Espresso', currentRating=0, selectedFlavors=[], currentPhoto=null;
 
-  function save() { localStorage.setItem('coffee_log_v3', JSON.stringify(entries)); localStorage.setItem('coffee_grinders_v1', JSON.stringify(grinders)); updateBadge(); }
-  function showToast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2200); }
-  function updateBadge() { const n = entries.length; document.getElementById('count-badge').textContent = n + (n === 1 ? ' příprava' : n >= 2 && n <= 4 ? ' přípravy' : ' příprav'); }
+  // Dark mode
+  let dark=localStorage.getItem('coffee_dark')==='1';
+  function applyDark(){document.body.classList.toggle('dark',dark);document.getElementById('dark-btn').innerHTML=dark?'&#9788;':'&#9790;';document.getElementById('theme-meta').content=dark?'#1A1208':'#1C1108';}
+  function toggleDark(){dark=!dark;localStorage.setItem('coffee_dark',dark?'1':'0');applyDark();}
+  applyDark();
 
-  const days = ['neděle','pondělí','úterý','středa','čtvrtek','pátek','sobota'];
-  const months = ['ledna','února','března','dubna','května','června','července','srpna','září','října','listopadu','prosince'];
-  const now = new Date();
-  document.getElementById('date-display').textContent = days[now.getDay()] + ', ' + now.getDate() + '. ' + months[now.getMonth()] + ' ' + now.getFullYear();
+  function save(){localStorage.setItem('coffee_log_v3',JSON.stringify(entries));localStorage.setItem('coffee_grinders_v1',JSON.stringify(grinders));updateBadge();}
+  function showToast(msg,dur){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),dur||2200);}
+  function updateBadge(){const n=entries.length;document.getElementById('count-badge').textContent=n+(n===1?' příprava':n>=2&&n<=4?' přípravy':' příprav');}
+
+  const days=['neděle','pondělí','úterý','středa','čtvrtek','pátek','sobota'];
+  const months=['ledna','února','března','dubna','května','června','července','srpna','září','října','listopadu','prosince'];
+  const now=new Date();
+  document.getElementById('date-display').textContent=days[now.getDay()]+', '+now.getDate()+'. '+months[now.getMonth()]+' '+now.getFullYear();
   updateBadge();
 
-  function showTab(t) {
-    ['new','log','grinders','stats'].forEach(id => { document.getElementById('tab-'+id).style.display = id===t ? '' : 'none'; });
-    document.querySelectorAll('.tab').forEach((el,i) => { el.classList.toggle('active', ['new','log','grinders','stats'][i]===t); });
-    if (t==='log') renderLog();
-    if (t==='grinders') renderGrinders();
-    if (t==='stats') renderStats();
-    if (t==='new') refreshGrinderSelect();
+  function showTab(t){
+    ['new','log','grinders','stats','backup'].forEach(id=>{document.getElementById('tab-'+id).style.display=id===t?'':'none';});
+    document.querySelectorAll('.tab').forEach((el,i)=>{el.classList.toggle('active',['new','log','grinders','stats','backup'][i]===t);});
+    if(t==='log')renderLog();if(t==='grinders')renderGrinders();if(t==='stats')renderStats();if(t==='new')refreshGrinderSelect();
   }
 
-  function selMethod(btn, name) { document.querySelectorAll('.method-btn').forEach(b => b.classList.remove('sel')); btn.classList.add('sel'); currentMethod = name; }
-  function setStar(n) { currentRating = n; document.querySelectorAll('.star').forEach((s,i) => s.classList.toggle('on', i<n)); }
-  function togFlavor(btn) { btn.classList.toggle('sel'); const f = btn.textContent; if (selectedFlavors.includes(f)) selectedFlavors = selectedFlavors.filter(x=>x!==f); else selectedFlavors.push(f); }
+  function selMethod(btn,name){document.querySelectorAll('.method-btn').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');currentMethod=name;}
+  function setStar(n){currentRating=n;document.querySelectorAll('.star').forEach((s,i)=>s.classList.toggle('on',i<n));}
+  function togFlavor(btn){btn.classList.toggle('sel');const f=btn.textContent;if(selectedFlavors.includes(f))selectedFlavors=selectedFlavors.filter(x=>x!==f);else selectedFlavors.push(f);}
+  function addCustomFlavor(){const inp=document.getElementById('custom-flavor-input'),val=inp.value.trim();if(!val)return;const btn=document.createElement('button');btn.className='flavor-tag sel';btn.textContent=val;btn.onclick=function(){togFlavor(this);};document.getElementById('flavor-tags').appendChild(btn);selectedFlavors.push(val);inp.value='';}
+  function updateRatio(){const d=parseFloat(document.getElementById('f-dose').value),y=parseFloat(document.getElementById('f-yield').value),row=document.getElementById('ratio-row');if(d&&y){row.style.display='';document.getElementById('ratio-val').textContent='Brew ratio  1 : '+(y/d).toFixed(1);}else row.style.display='none';}
 
-  function addCustomFlavor() {
-    const inp = document.getElementById('custom-flavor-input');
-    const val = inp.value.trim(); if (!val) return;
-    const btn = document.createElement('button'); btn.className = 'flavor-tag sel'; btn.textContent = val; btn.onclick = function() { togFlavor(this); };
-    document.getElementById('flavor-tags').appendChild(btn);
-    selectedFlavors.push(val); inp.value = '';
+  // TIMER
+  let timerInt=null,timerSec=0,timerGoing=false;
+  function timerFmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');}
+  function timerStartStop(){
+    if(timerGoing){clearInterval(timerInt);timerGoing=false;document.getElementById('timer-start-btn').textContent='Pokračovat';document.getElementById('timer-display').classList.remove('running');document.getElementById('timer-display').classList.add('done');document.getElementById('timer-use-btn').style.display='';}
+    else{timerInt=setInterval(()=>{timerSec++;document.getElementById('timer-display').textContent=timerFmt(timerSec);},1000);timerGoing=true;document.getElementById('timer-start-btn').textContent='Stop';document.getElementById('timer-display').classList.add('running');document.getElementById('timer-display').classList.remove('done');document.getElementById('timer-use-btn').style.display='none';}
+  }
+  function timerReset(){clearInterval(timerInt);timerGoing=false;timerSec=0;document.getElementById('timer-display').textContent='00:00';document.getElementById('timer-display').className='timer-display';document.getElementById('timer-start-btn').textContent='Start';document.getElementById('timer-use-btn').style.display='none';}
+  function useTimerValue(){document.getElementById('f-time').value=timerSec;showToast(timerSec+' s použito jako čas extrakce');}
+
+  // PHOTO
+  function handlePhoto(input){const file=input.files[0];if(!file)return;const reader=new FileReader();reader.onload=e=>{currentPhoto=e.target.result;document.getElementById('photo-preview').src=currentPhoto;document.getElementById('photo-preview').style.display='block';document.getElementById('photo-placeholder').style.display='none';document.getElementById('photo-clear').style.display='block';};reader.readAsDataURL(file);}
+  function clearPhoto(){currentPhoto=null;document.getElementById('photo-preview').style.display='none';document.getElementById('photo-placeholder').style.display='';document.getElementById('photo-clear').style.display='none';document.getElementById('photo-input').value='';}
+
+  // LIGHTBOX
+  function openLightbox(src){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox').classList.add('open');}
+  function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+
+  function refreshGrinderSelect(){const sel=document.getElementById('f-grinder-sel'),prev=sel.value;sel.innerHTML='<option value="">– bez mlýnku –</option>';grinders.forEach((g,i)=>{const o=document.createElement('option');o.value=i;o.textContent=g.name;sel.appendChild(o);});sel.value=prev||'';updateGrinderSettingType();}
+  function updateGrinderSettingType(){const idx=document.getElementById('f-grinder-sel').value,ng=document.getElementById('grinder-num-group'),cg=document.getElementById('grinder-clicks-group');if(idx===''||!grinders[idx]){ng.style.display='none';cg.style.display='none';return;}const type=grinders[idx].type;ng.style.display=(type==='number'||type==='both')?'':'none';cg.style.display=(type==='clicks'||type==='both')?'':'none';}
+  function addGrinder(){const name=document.getElementById('new-grinder-name').value.trim(),type=document.getElementById('new-grinder-type').value;if(!name)return;grinders.push({name,type});save();document.getElementById('new-grinder-name').value='';renderGrinders();refreshGrinderSelect();showToast('Mlýnek přidán');}
+  function deleteGrinder(i){if(!confirm('Smazat mlýnek "'+grinders[i].name+'"?'))return;grinders.splice(i,1);save();renderGrinders();refreshGrinderSelect();}
+  function renderGrinders(){const el=document.getElementById('grinders-list');if(!grinders.length){el.innerHTML='<div style="font-size:13px;font-style:italic;color:var(--ink3);padding:8px 0 12px;">Zatím žádné mlýnky.</div>';return;}const tl={number:'Číslo',clicks:'Kliknutí',both:'Číslo + kliky'};el.innerHTML=grinders.map((g,i)=>'<div class="grinder-row"><span class="grinder-name">'+g.name+'</span><span class="grinder-type">'+tl[g.type]+'</span><button class="grinder-del" onclick="deleteGrinder('+i+')" title="Smazat">&#10005;</button></div>').join('');}
+
+  function saveEntry(){
+    const origin=document.getElementById('f-origin').value.trim(),dose=document.getElementById('f-dose').value,yld=document.getElementById('f-yield').value,time=document.getElementById('f-time').value,temp=document.getElementById('f-temp').value,notes=document.getElementById('f-notes').value.trim(),gIdx=document.getElementById('f-grinder-sel').value;
+    const entry={id:Date.now(),date:new Date().toISOString(),method:currentMethod,origin:origin||'Neznámý původ',dose,yield:yld,time,temp,ratio:(dose&&yld)?(parseFloat(yld)/parseFloat(dose)).toFixed(1):null,grinder:gIdx!==''&&grinders[gIdx]?grinders[gIdx].name:'',grinderSetting:document.getElementById('f-grinder-setting').value,grinderClicks:document.getElementById('f-grinder-clicks').value,rating:currentRating,flavors:[...selectedFlavors],notes,photo:currentPhoto};
+    entries.unshift(entry);save();
+    ['f-origin','f-dose','f-yield','f-time','f-temp','f-grinder-setting','f-grinder-clicks','f-notes'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('f-grinder-sel').value='';updateGrinderSettingType();document.getElementById('ratio-row').style.display='none';
+    setStar(0);selectedFlavors=[];document.querySelectorAll('.flavor-tag').forEach(b=>{if(!BASE_FLAVORS.includes(b.textContent))b.remove();else b.classList.remove('sel');});
+    clearPhoto();timerReset();showToast('Záznam uložen');showTab('log');
   }
 
-  function updateRatio() {
-    const d = parseFloat(document.getElementById('f-dose').value);
-    const y = parseFloat(document.getElementById('f-yield').value);
-    const row = document.getElementById('ratio-row');
-    if (d && y) { row.style.display=''; document.getElementById('ratio-val').textContent = 'Brew ratio  1 : ' + (y/d).toFixed(1); }
-    else { row.style.display='none'; }
-  }
+  function starsStr(n){let s='';for(let i=0;i<5;i++)s+=i<n?'★':'☆';return s;}
+  function fmtDate(iso){const d=new Date(iso);return d.getDate()+'. '+(d.getMonth()+1)+'. '+d.getFullYear();}
 
-  function refreshGrinderSelect() {
-    const sel = document.getElementById('f-grinder-sel');
-    const prev = sel.value;
-    sel.innerHTML = '<option value="">– bez mlýnku –</option>';
-    grinders.forEach((g,i) => { const o = document.createElement('option'); o.value=i; o.textContent=g.name; sel.appendChild(o); });
-    sel.value = prev || '';
-    updateGrinderSettingType();
-  }
-
-  function updateGrinderSettingType() {
-    const idx = document.getElementById('f-grinder-sel').value;
-    const ng = document.getElementById('grinder-num-group');
-    const cg = document.getElementById('grinder-clicks-group');
-    if (idx==='' || !grinders[idx]) { ng.style.display='none'; cg.style.display='none'; return; }
-    const type = grinders[idx].type;
-    ng.style.display = (type==='number'||type==='both') ? '' : 'none';
-    cg.style.display = (type==='clicks'||type==='both') ? '' : 'none';
-  }
-
-  function addGrinder() {
-    const name = document.getElementById('new-grinder-name').value.trim();
-    const type = document.getElementById('new-grinder-type').value;
-    if (!name) return;
-    grinders.push({name, type}); save();
-    document.getElementById('new-grinder-name').value = '';
-    renderGrinders(); refreshGrinderSelect(); showToast('Mlýnek přidán');
-  }
-
-  function deleteGrinder(i) { if (!confirm('Smazat mlýnek "'+grinders[i].name+'"?')) return; grinders.splice(i,1); save(); renderGrinders(); refreshGrinderSelect(); }
-
-  function renderGrinders() {
-    const el = document.getElementById('grinders-list');
-    if (!grinders.length) { el.innerHTML = '<div style="font-size:13px;font-style:italic;color:var(--ink3);padding:8px 0 12px;">Zatím žádné mlýnky. Přidej svůj první níže.</div>'; return; }
-    const typeLabel = {number:'Číslo', clicks:'Kliknutí', both:'Číslo + kliky'};
-    el.innerHTML = grinders.map((g,i) =>
-      '<div class="grinder-row"><span class="grinder-name">'+g.name+'</span><span class="grinder-type">'+typeLabel[g.type]+'</span><button class="grinder-del" onclick="deleteGrinder('+i+')" title="Smazat">&#10005;</button></div>'
-    ).join('');
-  }
-
-  function saveEntry() {
-    const origin = document.getElementById('f-origin').value.trim();
-    const dose = document.getElementById('f-dose').value;
-    const yld = document.getElementById('f-yield').value;
-    const time = document.getElementById('f-time').value;
-    const temp = document.getElementById('f-temp').value;
-    const notes = document.getElementById('f-notes').value.trim();
-    const gIdx = document.getElementById('f-grinder-sel').value;
-    const entry = {
-      id: Date.now(), date: new Date().toISOString(),
-      method: currentMethod, origin: origin||'Neznámý původ',
-      dose, yield: yld, time, temp,
-      ratio: (dose&&yld) ? (parseFloat(yld)/parseFloat(dose)).toFixed(1) : null,
-      grinder: gIdx!==''&&grinders[gIdx] ? grinders[gIdx].name : '',
-      grinderSetting: document.getElementById('f-grinder-setting').value,
-      grinderClicks: document.getElementById('f-grinder-clicks').value,
-      rating: currentRating, flavors: [...selectedFlavors], notes
-    };
-    entries.unshift(entry); save();
-    ['f-origin','f-dose','f-yield','f-time','f-temp','f-grinder-setting','f-grinder-clicks','f-notes'].forEach(id => document.getElementById(id).value='');
-    document.getElementById('f-grinder-sel').value=''; updateGrinderSettingType();
-    document.getElementById('ratio-row').style.display='none';
-    setStar(0); selectedFlavors=[];
-    document.querySelectorAll('.flavor-tag').forEach(b => { if (!BASE_FLAVORS.includes(b.textContent)) b.remove(); else b.classList.remove('sel'); });
-    showToast('Záznam uložen'); showTab('log');
-  }
-
-  function starsStr(n) { let s=''; for(let i=0;i<5;i++) s+=i<n?'★':'☆'; return s; }
-  function fmtDate(iso) { const d=new Date(iso); return d.getDate()+'. '+(d.getMonth()+1)+'. '+d.getFullYear(); }
-
-  function renderLog() {
-    const el = document.getElementById('log-list');
-    if (!entries.length) { el.innerHTML='<div class="empty">Zatím žádné záznamy.<br><em>Připrav si kávu a zapiš ji.</em></div>'; return; }
-    el.innerHTML = entries.map(e => {
-      const pc = [e.dose?e.dose+' g':null, e['yield']?e['yield']+' g výtěžek':null, e.time?e.time+' s':null, e.temp?e.temp+' °C':null, e.ratio?'1:'+e.ratio:null].filter(Boolean).map(c=>'<span class="chip">'+c+'</span>').join('');
-      const gc = [e.grinder||null, e.grinderSetting?'#'+e.grinderSetting:null, e.grinderClicks?e.grinderClicks+' kliků':null].filter(Boolean).map(c=>'<span class="chip">'+c+'</span>').join('');
-      const fc = (e.flavors&&e.flavors.length) ? e.flavors.map(f=>'<span class="chip flavor">'+f+'</span>').join('') : '';
-      const notes = e.notes ? '<div class="log-notes">'+e.notes+'</div>' : '';
-      return '<div class="log-card"><div class="log-card-top"><div><div class="log-card-title">'+e.origin+'</div><div class="log-card-sub">'+e.method+' &middot; '+fmtDate(e.date)+'</div></div>'+(e.rating?'<div class="log-stars">'+starsStr(e.rating)+'</div>':'')+'</div>'+((pc||gc||fc)?'<div class="chips">'+pc+gc+fc+'</div>':'')+notes+'</div>';
+  function renderLog(){
+    const el=document.getElementById('log-list');
+    if(!entries.length){el.innerHTML='<div class="empty">Zatím žádné záznamy.<br><em>Připrav si kávu a zapiš ji.</em></div>';return;}
+    el.innerHTML=entries.map(e=>{
+      const pc=[e.dose?e.dose+' g':null,e['yield']?e['yield']+' g výtěžek':null,e.time?e.time+' s':null,e.temp?e.temp+' °C':null,e.ratio?'1:'+e.ratio:null].filter(Boolean).map(c=>'<span class="chip">'+c+'</span>').join('');
+      const gc=[e.grinder||null,e.grinderSetting?'#'+e.grinderSetting:null,e.grinderClicks?e.grinderClicks+' kliků':null].filter(Boolean).map(c=>'<span class="chip">'+c+'</span>').join('');
+      const fc=(e.flavors&&e.flavors.length)?e.flavors.map(f=>'<span class="chip flavor">'+f+'</span>').join(''):'';
+      const notes=e.notes?'<div class="log-notes">'+e.notes+'</div>':'';
+      const photo=e.photo?'<img class="log-photo" src="'+e.photo+'" loading="lazy" onclick="openLightbox(this.src)" />':'';
+      return '<div class="log-card"><div class="log-card-top"><div><div class="log-card-title">'+e.origin+'</div><div class="log-card-sub">'+e.method+' &middot; '+fmtDate(e.date)+'</div></div>'+(e.rating?'<div class="log-stars">'+starsStr(e.rating)+'</div>':'')+'</div>'+((pc||gc||fc)?'<div class="chips">'+pc+gc+fc+'</div>':'')+notes+photo+'</div>';
     }).join('');
   }
 
-  function renderStats() {
-    if (!entries.length) { document.getElementById('stats-grid').innerHTML='<div class="empty" style="grid-column:1/-1;">Zatím žádná data.</div>'; ['stats-methods','stats-origins','stats-flavors'].forEach(id=>document.getElementById(id).innerHTML=''); return; }
-    const rated = entries.filter(e=>e.rating>0);
-    const avg = rated.length ? (rated.reduce((s,e)=>s+e.rating,0)/rated.length).toFixed(1) : '–';
-    const mc = {}; entries.forEach(e=>{mc[e.method]=(mc[e.method]||0)+1;});
-    const top = Object.entries(mc).sort((a,b)=>b[1]-a[1])[0];
-    document.getElementById('stats-grid').innerHTML =
-      '<div class="stat-card"><div class="stat-label">Příprav</div><div class="stat-val">'+entries.length+'</div></div>'+
-      '<div class="stat-card"><div class="stat-label">Hodnocení</div><div class="stat-val">'+avg+'</div><div class="stat-sub">'+rated.length+' záznamů</div></div>'+
-      '<div class="stat-card"><div class="stat-label">Top metoda</div><div class="stat-val" style="font-size:15px;padding-top:6px;">'+(top?top[0]:'–')+'</div><div class="stat-sub">'+(top?top[1]+'x':'')+'</div></div>';
-    function bars(obj, id) {
-      const s=Object.entries(obj).sort((a,b)=>b[1]-a[1]).slice(0,6); const max=s[0]?s[0][1]:1;
-      document.getElementById(id).innerHTML = s.map(([k,v])=>'<div class="bar-row"><div class="bar-label"><span>'+k+'</span><span>'+v+'x</span></div><div class="bar-track"><div class="bar-fill" style="width:'+Math.round(v/max*100)+'%"></div></div></div>').join('')||'<div style="color:var(--ink3);font-size:13px;font-style:italic;">Žádná data</div>';
-    }
-    bars(mc,'stats-methods');
-    const oc={}; entries.forEach(e=>{if(e.origin!=='Neznámý původ')oc[e.origin]=(oc[e.origin]||0)+1;}); bars(oc,'stats-origins');
-    const fc={}; entries.forEach(e=>{(e.flavors||[]).forEach(f=>{fc[f]=(fc[f]||0)+1;});}); bars(fc,'stats-flavors');
+  function renderStats(){
+    if(!entries.length){document.getElementById('stats-grid').innerHTML='<div class="empty" style="grid-column:1/-1;">Zatím žádná data.</div>';['stats-methods','stats-origins','stats-flavors'].forEach(id=>document.getElementById(id).innerHTML='');return;}
+    const rated=entries.filter(e=>e.rating>0),avg=rated.length?(rated.reduce((s,e)=>s+e.rating,0)/rated.length).toFixed(1):'–',mc={};
+    entries.forEach(e=>{mc[e.method]=(mc[e.method]||0)+1;});const top=Object.entries(mc).sort((a,b)=>b[1]-a[1])[0];
+    document.getElementById('stats-grid').innerHTML='<div class="stat-card"><div class="stat-label">Příprav</div><div class="stat-val">'+entries.length+'</div></div><div class="stat-card"><div class="stat-label">Hodnocení</div><div class="stat-val">'+avg+'</div><div class="stat-sub">'+rated.length+' záznamů</div></div><div class="stat-card"><div class="stat-label">Top metoda</div><div class="stat-val" style="font-size:15px;padding-top:6px;">'+(top?top[0]:'–')+'</div><div class="stat-sub">'+(top?top[1]+'x':'')+'</div></div>';
+    function bars(obj,id){const s=Object.entries(obj).sort((a,b)=>b[1]-a[1]).slice(0,6),max=s[0]?s[0][1]:1;document.getElementById(id).innerHTML=s.map(([k,v])=>'<div class="bar-row"><div class="bar-label"><span>'+k+'</span><span>'+v+'x</span></div><div class="bar-track"><div class="bar-fill" style="width:'+Math.round(v/max*100)+'%"></div></div></div>').join('')||'<div style="color:var(--ink3);font-size:13px;font-style:italic;">Žádná data</div>';}
+    bars(mc,'stats-methods');const oc={};entries.forEach(e=>{if(e.origin!=='Neznámý původ')oc[e.origin]=(oc[e.origin]||0)+1;});bars(oc,'stats-origins');const fc={};entries.forEach(e=>{(e.flavors||[]).forEach(f=>{fc[f]=(fc[f]||0)+1;});});bars(fc,'stats-flavors');
   }
+
+  function exportToClipboard(){
+    const data=JSON.stringify({entries,grinders,exported:new Date().toISOString()},null,2);
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(data).then(()=>showToast('Zkopírováno do schránky',3000)).catch(()=>fallbackCopy(data));}
+    else fallbackCopy(data);
+  }
+  function fallbackCopy(data){const ta=document.createElement('textarea');ta.value=data;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');showToast('Zkopírováno',3000);}catch(e){showToast('Kopírování selhalo');}document.body.removeChild(ta);}
+  function exportCSV(){
+    const hdr='Datum,Metoda,Původ,Mlýnek,Nastavení,Kliknutí,Dávka(g),Výtěžek(g),Čas(s),Teplota(°C),Ratio,Hodnocení,Chutě,Poznámky';
+    const rows=entries.map(e=>[fmtDate(e.date),e.method,'"'+e.origin+'"','"'+(e.grinder||'')+'"',e.grinderSetting||'',e.grinderClicks||'',e.dose||'',e['yield']||'',e.time||'',e.temp||'',e.ratio||'',e.rating||'','"'+((e.flavors||[]).join(', '))+'"','"'+(e.notes||'')+'"'].join(','));
+    const blob=new Blob(['\uFEFF'+[hdr,...rows].join('\n')],{type:'text/csv;charset=utf-8'});
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='coffee_log_'+new Date().toISOString().slice(0,10)+'.csv';document.body.appendChild(a);a.click();document.body.removeChild(a);showToast('CSV staženo');
+  }
+  function importFromText(){
+    const text=document.getElementById('import-area').value.trim();if(!text){showToast('Vlož nejdřív JSON data');return;}
+    try{const data=JSON.parse(text);if(!data.entries||!Array.isArray(data.entries))throw new Error();if(!confirm('Přepsat '+entries.length+' záznamů? ('+data.entries.length+' v záloze)'))return;entries=data.entries;if(data.grinders)grinders=data.grinders;save();document.getElementById('import-area').value='';showToast('Obnoveno — '+entries.length+' záznamů',3000);}
+    catch(e){showToast('Chyba: neplatný formát JSON');}
+  }
+  function clearAllData(){if(!confirm('Opravdu smazat VŠECHNA data?'))return;if(!confirm('Poslední varování — data zmizí navždy.'))return;entries=[];grinders=[];save();showToast('Data smazána');}
 
   refreshGrinderSelect();
 </script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js').catch(()=>{});
-    }
-  </script>
+<script>if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});</script>
 </body>
 </html>
